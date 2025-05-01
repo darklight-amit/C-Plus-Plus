@@ -1,1 +1,1 @@
-# C-
+# Learn C++ in 30 days long series, with full of practicle examples.
