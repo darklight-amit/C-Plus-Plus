@@ -27,13 +27,13 @@ int main(){
     int patientIndex;
     bool updateIt = true;
     cout << "Enter the index(1-5) to update the patient name: ";
-    string newName;
     do{
         cin >>patientIndex;
         if (patientIndex > 0 and patientIndex <=5 ){
             updateIt = false;
             cout << "new name which needs to be updated : ";
-            cin >> newName;
+            cin.ignore(); // Clear leftover newline from previous input
+            getline(cin, patient[patientIndex-1]);
             
         }   
         else{
@@ -41,8 +41,7 @@ int main(){
         } 
     }while(updateIt);
 
-    patient[patientIndex-1] = newName;
-
+    
     cout <<"\nlist of admitted patient \n";
     j = 1;
     for (string name: patient){
